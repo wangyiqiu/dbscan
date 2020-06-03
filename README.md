@@ -22,7 +22,7 @@ The code can be compiled and run on a 64-bit Linux system with a g++ compiler.
 
       make clean; GCILK=1 make -j;
 
-* Run using our example dataset (using ``Epsilon=9.9`` and ``Minpts=2``):
+* Run using our example dataset ``tiny.txt`` (using ``Epsilon=9.9`` and ``Minpts=2``):
 
       ./DBSCAN -eps 9.9 -minpts 2 -o clusters.txt ./tiny.txt
 
@@ -54,4 +54,4 @@ When the dataset above is run with ``Epsilon=9.9`` and ``Minpts=2``, we get outp
     2 0
     3 1
 
-The first column denotes the indices of the data points, for instance index ``2`` refers to data point ``3.1 3 5``. The second column denotes the cluster assignments of the data points, for instance, points ``10 20 30`` and ``10 20 31`` are in the same cluster, with id of ``1``. Note that point with index ``5`` does not have a cluster assignment for being a noise point.
+The first column denotes the indices of the data points, for instance index ``2`` refers to data point ``3.1 3 5``. The second column denotes the cluster assignments of the data points, for instance, points ``10 20 30`` and ``10 20 31`` are in the same cluster, with id of ``1``. Note that point with index ``4`` does not have a cluster assignment for being a noise point.
