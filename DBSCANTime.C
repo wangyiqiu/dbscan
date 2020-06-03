@@ -263,12 +263,12 @@ intT main(intT argc, char* argv[]) {
   intT dim = 0;
 
   _seq<pointNd> PIn = readNdPointsFromFile(iFile, &dim);
-  for (intT i=0; i<PIn.n; ++i) {
-    for (intT j=0; j<dim; ++j) {
-      cout << PIn.A[i].m_data[j] << " ";
-    }
-    cout << endl;
-  }
+  // for (intT i=0; i<PIn.n; ++i) {
+  //   for (intT j=0; j<dim; ++j) {
+  //     cout << PIn.A[i].m_data[j] << " ";
+  //   }
+  //   cout << endl;
+  // }
 
   cout << "::[DBSCANTime] DIM: " << dim << endl;
   
