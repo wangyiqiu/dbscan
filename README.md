@@ -3,12 +3,12 @@ This repository contains code for our SIGMOD'20 paper: Theoretically Efficient a
 
 Currently it is the fastest sequential and parallel Euclidean DBSCAN code, and it processes the largest dataset in the DBSCAN literature just on a single multicore machine. If you use our work please cite our paper:
 
-      @article{wang2019theoretically,
-        title={Theoretically-Efficient and Practical Parallel DBSCAN},
-        author={Wang, Yiqiu and Gu, Yan and Shun, Julian},
-        journal={arXiv preprint arXiv:1912.06255},
-        year={2019}
-      }
+    @article{wang2019theoretically,
+      title={Theoretically-Efficient and Practical Parallel DBSCAN},
+      author={Wang, Yiqiu and Gu, Yan and Shun, Julian},
+      journal={arXiv preprint arXiv:1912.06255},
+      year={2019}
+    }
 
 # Tutorial
 
