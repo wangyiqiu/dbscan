@@ -41,12 +41,34 @@ namespace benchIO {
     }}
   }
 
+#ifdef PBBSIO
+  inline bool isNumber(char myChar) {
+    if (myChar == '0' || myChar == '1' || myChar == '2' ||
+	myChar == '3' || myChar == '4' || myChar == '5' ||
+	myChar == '6' || myChar == '7' || myChar == '8' ||
+	myChar == '9') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  inline intT extractDim(words *W) {
+    int d;
+    char *targetString = W->Strings[0];
+    intT myPt = 18;
+    while (isNumber(targetString[myPt])) myPt ++;
+    targetString[myPt] = '\0';
+    d = atoi(&targetString[18]);
+    return d;
+  }
+#else
   inline intT extractDim(words *W) {
     int d;
     char *targetString = W->Strings[1];
     d = atoi(&targetString[0]);
     return d;
   }
+#endif
 
   _seq<pointNd> readNdPointsFromFile(char* fname, int *dim) {
     _seq<char> S = readStringFromFile(fname);
