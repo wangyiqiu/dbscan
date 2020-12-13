@@ -33,7 +33,7 @@ Under each key, there will be a subdictionary keyed by the name of the data set,
 
 With ``reproduced-dbscan.py``, it will be easy to verify the figures containing plots in our paper, either by plotting ``dataPoint['totaltime']`` against ``dataPoint['x']`` for each data set and each experiment; or by reading the numbers and comparing directly with our plots. For the convenience of verification, we provide all of our parsed data (similar to ``reproduced-dbscan.py`` above) and plotting scripts in ``./submitted/``. To re-generate the plots based on our data, navigate to directly``dbscan/reproducibility/scripts/submitted``, and run ``mkdir plots`` to make a new directly, followed by ``python3 paperPlots.py`` on a machine with ``matplotlib`` installed. The plots can be found in the ``plots`` folder just created.
 
-### Testing variants
+### Testing method variants
 
 The tutorial above covers the replication of experiments for ``our-exact-bucketing`` algorithm, and testing other variants of our methods are similar -- the difference only lies in compiling the program. To switch a different method that we have included in our paper, open ``dbscan/c++/DBSCAN.C`` and modify the macros on the top the file by commenting/uncommenting them. We summarize which macro to uncomment for each respective method (and comment-out the rest):
 * our-exact-qt: ``OUR_EXACT_QT``
@@ -45,4 +45,8 @@ The tutorial above covers the replication of experiments for ``our-exact-bucketi
 * our-approx: ``OUR_APPROX``
 * our-approx-bucketing: ``OUR_APPROX``+ ``USE_BUCKETING``
 
-Then, recompile the program to generate a new ``DBSCAN`` binary, and the rest of the steps are the same. We note that the script that parses the raw terminal output, ``parseOutput.py`` will parse all the files in the ``dbscan/reproducibility/scripts/outputs`` folder, whose contents need to be deleted before testing a different method.
+Then, recompile the program to generate a new ``DBSCAN`` binary, and the rest of the steps are the same.
+
+### Clean up
+
+We note that the script that parses the raw terminal output, ``parseOutput.py`` will parse all the files in the ``dbscan/reproducibility/scripts/outputs`` folder, whose contents need to be deleted before testing a different method. The generated ``reproduced-dbscan.py`` needs to be backed up where necessary, otherwise it will be overwritten when testing a different method.
