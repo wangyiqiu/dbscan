@@ -47,6 +47,6 @@ The tutorial above covers the replication of experiments for ``our-exact-bucketi
 
 Then, recompile the program to generate a new ``DBSCAN`` binary, and the rest of the steps are the same.
 
-### Clean up
+### Cleaning up
 
 We note that the script that parses the raw terminal output, ``parseOutput.py`` will parse all the files in the ``dbscan/reproducibility/scripts/outputs`` folder, whose contents need to be deleted before testing a different method. The generated ``reproduced-dbscan.py`` needs to be backed up where necessary, otherwise it will be overwritten when testing a different method.
