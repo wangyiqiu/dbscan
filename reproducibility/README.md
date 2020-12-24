@@ -14,8 +14,13 @@ Amazon Web Services EC2 c5.18xlarge with Ubuntu 18.04
 * Secondary Storage: SSD
 
 ## Tutorial
+
+### Dependencies
+
+JeMalloc is required to accurately reproduce the paper's result, -- please install JeMalloc by following the [link](https://github.com/jemalloc/jemalloc/blob/dev/INSTALL.md). Follow all the steps, including those in ''Advanced configuration'' section to prefix JeMalloc's public API by appending flag ``--with-jemalloc-prefix=je_custom_prefix_``, and complete the installation.
+
 ### Compilation
-First, clone the repository ``git clone https://github.com/wangyiqiu/dbscan.git``. Navigate to the source code folder (``dbscan/c++``). Compile the source with parallel execution enabled ``make clean; GCILK=1 PBBSIO=1 make -j``. Now the program can process data sets with the ''pbbs'' extension, for example ``./DBSCAN -eps 100 -minpts 10 ../reproducibility/datasets/2D_VisualVar_10M.pbbs``.
+Clone the repository ``git clone https://github.com/wangyiqiu/dbscan.git``. Navigate to the source code folder (``dbscan/c++``). Compile the source with parallel execution enabled ``make clean; GCILK=1 PBBSIO=1 USE_JEMALLOC=1 make -j``. Now the program can process data sets with the ''pbbs'' extension, for example ``./DBSCAN -eps 100 -minpts 10 ../reproducibility/datasets/2D_VisualVar_10M.pbbs``.
 
 ### Using our test script
 Since our paper contains more than a thousand experiment data points, we provide test scripts that we used to run the experiments and generate the plots in our paper. Navigate to ``dbscan/reproducibility/scripts/``, create a symbolic link to the ``DBSCAN`` program that we compiled in the previous step ``ln -s ../../c++/DBSCAN``.
