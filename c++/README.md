@@ -4,15 +4,19 @@ The main function can be found in ``DBSCANTime.C``, which calls the DBSCAN routi
 
 # Tutorial
 
+## Dependencies
+
+JeMalloc is required to accurately reproduce the paper's result, -- please install JeMalloc by following the [link](https://github.com/jemalloc/jemalloc/blob/dev/INSTALL.md). Follow all the steps, including those in ''Advanced configuration'' section to prefix JeMalloc's public API by appending flag ``--with-jemalloc-prefix=je_custom_prefix_``, and complete the installation.
+
 ## Quick Start
 The code can be compiled and run on a 64-bit Linux system with a g++ compiler.
 * Clone the repository:
 
       git clone https://github.com/wangyiqiu/dbscan.git
         
-* Navigate to the source code folder (dbscan/c++) and compile with parallel execution:
+* Navigate to the source code folder (dbscan/c++) and compile with parallel execution (if not using JeMalloc, compile instead with ``make clean; GCILK=1 make -j;``, which will produce a slower result):
 
-      make clean; GCILK=1 make -j;
+      make clean; GCILK=1 USE_JEMALLOC=1 make -j;
 
 * Run using our example dataset ``tiny.txt`` (using ``Epsilon=9.9`` and ``Minpts=2``):
 
