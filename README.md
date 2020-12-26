@@ -7,7 +7,7 @@ This repository contains code for our SIGMOD'20 paper: Theoretically Efficient a
 
 ## Performance
 
-Our code is faster than the DBSCAN package in Sklearn on a single thread, and provides additional speedup via multi-threading. Below, we show a simple benchmark comparing our code with Sklearn, tested on a 4-core computer, and a visualization of the clustering result. The time saved will be more significant on a larger data set and a machine with more cores.
+Our Python wrapped software is faster than all state-of-the-art DBSCAN packages, and provides additional speedup via multi-threading. Below, we show a simple benchmark comparing our code with the DBSCAN implementation of Sklearn, tested on a 4-core computer, and a visualization of the clustering result. The time saved will be more significant on a larger data set and a machine with more cores.
 
 <p float="left">
 <img src="https://github.com/wangyiqiu/dbscan-python/blob/master/compare.png" alt="timing" width="300"/>
@@ -16,8 +16,8 @@ Our code is faster than the DBSCAN package in Sklearn on a single thread, and pr
 
 ## Installation
 
-The software is written using C++ and made available in ***Python 3.8+*** using a Cython wrapper. It is tested, and should work directly on any fresh copy of Ubuntu 20.04. There are two ways to install it:
-* Install it using PyPI: ``pip3 install --user dbscan``
+The software is written using C++ and wrapped using Cython. It is supported on ***64-bit Linux with Python 3.8+*** (it is tested to work directly on a fresh copy of Ubuntu 20.04). There are two ways to install it:
+* Install it using PyPI: ``pip3 install --user dbscan`` (the latest verion is 0.0.9)
 * ***OR*** Compile it yourself: First install dependencies ``pip3 install --user Cython numpy`` and ``sudo apt install libpython3-dev``. Navigate to ``dbscan-python/dbscan/``, and run the ''make'' script ``./make.sh``, The compilation will take a few minutes, and generate a ''.so'' library containing the ''DBSCAN'' module.
 
 ## Tutorial
