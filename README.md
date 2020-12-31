@@ -1,13 +1,13 @@
 ## About
 
 This repository contains code for our SIGMOD'20 paper: Theoretically Efficient and Practical Parallel DBSCAN ([arXiv](https://arxiv.org/abs/1912.06255)). Currently it is the fastest sequential and parallel Euclidean DBSCAN code, and it processes the largest dataset in the DBSCAN literature just on a single multicore machine.
-* If you are a data scientist or ML engineer looking for fast DBSCAN package, please read on for a Python installation (requires Python 3.8+). Our Python code is maintained in a separate Github [repository](https://github.com/wangyiqiu/dbscan-python).
-* If you are looking to benchmark our method, please find more instructions in the ``dbscan/c++`` subdirectory.
+* If you are a data scientist or ML engineer looking for a fast DBSCAN package, please read on for a Python installation. Currently it requires ***Python 3.8+ on a 64-bit Linux***, but we are working on expanding it's portability. If your system is not yet supported, please use the C++ version in the ``dbscan/c++`` subdirectory instead. Our Python code is maintained in a separate Github [repository](https://github.com/wangyiqiu/dbscan-python).
+* If you are looking to benchmark our method, please find more instructions in the ``dbscan/c++`` subdirectory. Please note that only the C++ implementation produces the same result as in our paper, and the Python version mentioned above is an on-going work that may have different performance characteristics.
 * For SIGMOD'20 reproducility, please find more instructions in the ``dbscan/reproducibility`` subdirectory
 
 ## Performance
 
-Our Python wrapped software is faster than all state-of-the-art DBSCAN packages, and provides additional speedup via multi-threading. Below, we show a simple benchmark comparing our code with the DBSCAN implementation of Sklearn, tested on a 4-core computer, and a visualization of the clustering result. The time saved will be more significant on a larger data set and a machine with more cores.
+Our Python package on 1 thread is on par with all serial state-of-the-art DBSCAN packages, and provides additional speedup via multi-threading. Below, we show a simple benchmark comparing our code with the DBSCAN implementation of Sklearn, tested on a 4-core computer, and a visualization of the clustering result. The time saved will be more significant on a larger data set and a machine with more cores.
 
 <p float="left">
 <img src="https://github.com/wangyiqiu/dbscan-python/blob/master/compare.png" alt="timing" width="300"/>
