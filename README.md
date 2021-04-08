@@ -1,8 +1,8 @@
 ## About
 
 This repository contains code for our SIGMOD'20 paper: Theoretically Efficient and Practical Parallel DBSCAN ([arXiv](https://arxiv.org/abs/1912.06255)). Currently it is the fastest sequential and parallel Euclidean DBSCAN code, and it processes the largest dataset in the DBSCAN literature just on a single multicore machine.
-* Please find the usage instructions in the ``dbscan/c++`` subdirectory.
-* If you computing environment satisfies ***Python 3.8+ on a 64-bit Linux*** (for instance, a fresh copy of Ubuntu 20 on the AWS), you could read-on for a pre-compiled Python installation. Our Python code is maintained in a separate Github [repository](https://github.com/wangyiqiu/dbscan-python).
+* Please find usage instructions in the ``dbscan/c++`` subdirectory.
+* If your computing environment satisfies ***Python 3.8+ on a 64-bit Linux*** (for instance, a fresh copy of Ubuntu 20 on the AWS), you could also read-on for a pre-compiled Python installation. Our Python code is maintained in a separate Github [repository](https://github.com/wangyiqiu/dbscan-python).
 * For SIGMOD'20 reproducility, please find more instructions in the ``dbscan/reproducibility`` subdirectory
 
 ## Performance
