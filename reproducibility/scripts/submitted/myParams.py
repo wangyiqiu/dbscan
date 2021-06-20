@@ -1,1 +1,0 @@
-../myParams.py
