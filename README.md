@@ -1,4 +1,6 @@
-# Further development has been moved [here](https://github.com/wangyiqiu/dbscan-python)
+# Update
+
+## Further development has been moved to a new repository [https://github.com/wangyiqiu/dbscan-python](https://github.com/wangyiqiu/dbscan-python)
 
 # Overview
 
